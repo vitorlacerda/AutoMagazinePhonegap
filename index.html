@@ -1,0 +1,1202 @@
+<!DOCTYPE html >
+<html class="ui-mobile">
+<head>
+    <meta charset="UTF-8" />
+	<title>AutoMagazine Mobile</title>
+<!--	<meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes"/>
+    <meta name="apple-mobile-web-app-status-bar-style" content="black"/>
+-->    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+    <!-- required stylesheet -->
+    
+    <link href="jquery-mobile/styles/jquery.mobile-1.4.0.min.css"  media="screen"  rel="stylesheet" type="text/css" />
+    <link href="jquery-mobile/styles/jquery.signaturepad.css" media="screen" rel="stylesheet" type="text/css" />
+
+     
+    <!-- project stylesheet -->
+    <!--
+    <link href="styles/themes/sce-categorias.min.css"  media="screen" rel="stylesheet" type="text/css" />
+    -->
+    <link rel="stylesheet" href="jquery-mobile/styles/MobilePDV.min.css" />
+    <link rel="stylesheet" href="jquery-mobile/styles/jquery.mobile.structure-1.4.0.min.css" />    
+    <link href="styles/page-menu.css"  media="screen" rel="stylesheet" type="text/css" />
+    
+    <link href="jquery-mobile/styles/jquery.mobile.iscrollview.css" media="screen" rel="stylesheet" type="text/css" />
+    <link href="jquery-mobile/styles/jquery.mobile.iscrollview-pull.css" media="screen" rel="stylesheet" type="text/css" />
+    
+
+    <!-- required libraries -->
+	<script src="cordova.js" type="text/javascript"></script>
+	<!--<script src="jquery-mobile/js/jquery-1.10.2.min.js" type="text/javascript"></script>-->
+    <script src="jquery-mobile/js/jquery-2.0.3.min.js" type="text/javascript"></script>
+    
+    <!--<script src="jquery-mobile/js/jquery-1.9.1.min.js" type="text/javascript"></script>-->
+	<script src="jquery-mobile/js/jquery.mobile-1.4.0.min.js" type="text/javascript"></script>
+    <!--<script src="jquery-mobile/js/jquery.mobile-1.3.1.min.js" type="text/javascript"></script>-->
+    
+    <!--[if lt IE 9]><script src="flashcanvas.js"></script><![endif]-->
+    <script src="jquery-mobile/js/jquery.signaturepad.min.js"></script>
+    <script src="jquery-mobile/js/json2.min.js"></script>
+    
+    <script src="jquery-mobile/js/iscroll.js" type="text/javascript"></script>
+    <script src="jquery-mobile/js/jquery.mobile.iscrollview.js" type="text/javascript"></script>
+    <script src="jquery-mobile/js/knockout-3.0.0.js" type="text/javascript"></script>
+    <script src="jquery-mobile/js/knockout.mapping.2.4.1.js" type="text/javascript"></script>
+    
+    
+    <!--<script src="jquery-mobile/js/fastclick.js" type="text/javascript"></script>-->
+    <!--<script src="jquery-mobile/js/jquery.touchSwipe.min.js" type="text/javascript"></script>-->
+    <!--<script src="jquery-mobile/js/softkeyboard.js" type="text/javascript"></script>-->
+    
+
+    <!--<script src="jquery-mobile/js/jquery.fittext.js" type="text/javascript"></script>-->
+
+	<!--<script src="https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=true"></script>-->
+
+    
+    <!-- the various view models -->
+
+<!--    <script src="scripts/login.js" type="text/javascript"></script>-->
+
+    <script src="viewmodel/alert.js" type="text/javascript"></script>
+    <script src="viewmodel/login.js" type="text/javascript"></script>
+    <script src="viewmodel/pedido.js" type="text/javascript"></script>
+    <script src="viewmodel/teclado.js" type="text/javascript"></script>
+    <script src="viewmodel/sync.js" type="text/javascript"></script>
+    <script src="viewmodel/querys.js" type="text/javascript"></script>
+	<script src="viewmodel/settings.js" type="text/javascript"></script>
+    <script src="viewmodel/cancelamento.js" type="text/javascript"></script>
+    <script src="viewmodel/conta.js" type="text/javascript"></script>
+    <script src="viewmodel/statusmesa.js" type="text/javascript"></script>
+    
+    <!-- the code that puts it all together -->
+    <script src="app.js" type="text/javascript"></script>
+
+
+</head>
+<body id="body" class="ui-mobile-viewport " data-theme="b">
+    
+    <!--Start-->
+	<div data-role="page" id="page-start" data-theme="b" >
+        <div data-role="header"  data-position="fixed" data-tap-toggle="false" data-transition="none" >
+            <h3>PDV Mobile</h3>
+        </div>
+        <!-- content -->
+        <div  data-role="content"  >
+            <form>
+                <div id="jqm-homeheader" style="width: 100%;    text-align: center;" >
+				    <h1 id="jqm-logo" ><img style="width:200px;height:100px" src="styles/images/start/pdvmobile-logo.png" alt="AutoMagazine PDV Mobile" /></h1>
+				    <p>Uma solução móvel do AutoMagazine PDV para sua empresa.</p>
+			    </div>
+
+
+			    <p id="IsPhone" class="intro"><strong>Benvindo.</strong> O AutoMagazine PDV Mobile é a sua soluçãoo de pedidos em smartphone e tablets.</p>
+
+			    <ul data-role="listview" data-inset="true"  data-theme="a">
+				    <li data-role="list-divider">Escolha</li>
+				    <li><a vclick="app.setting.AoEntrarNoSistema()" data-transition1="slide">Entrar no sistema</a></li>
+				    <!--<li><a vclick="app.gotopage('page-sync')" data-transition="pop">Configurações</a></li>-->
+                    <li><a vclick="app.setting.ShowPage()" >Configurações</a></li>
+                    <!--<li><a vclick="app.pedido.AbrePedido('demo','5')" data-transition1="slide">pedido</a></li>-->
+                
+			    </ul>
+            </form> 
+        </div>
+
+       <!-- 
+           <div data-position="fixed" data-role="footer" data-tap-toggle="false" data-transition="none" class="footer-docs" >
+            <p class="jqm-version"></p>
+			<p>Copyright 2014, AutoMagazine - Sce Sistemas Ltda. </p>
+	    </div>-->
+    </div>
+  
+  
+    <!--PAGE-CONFIG-->
+	<div data-role="page" id="page-config" data-theme="b" >
+        <!-- header --> 
+        <div data-role="header"  data-position="fixed" data-tap-toggle="false" data-transition="none" >
+            <a vclick="app.setting.CheckHostAvaiable()" data-role="button"  data-icon="check" data-iconpos="left" class="ui-btn-right ui-btn-active" >
+                Avançar
+            </a>
+            <a  vclick="app.setting.onCancel()"  data-role="button" data-icon="arrow-l" data-iconpos="left"  class="ui-btn-left">
+                Voltar
+            </a>
+            <h3>
+                PDV Mobile
+            </h3>
+        </div>
+        <!-- content --> 
+        <div data-iscrol1l=""  data-role="content" >
+            <form>
+                <fieldset id="grpServidor" data-role="collapsible" data-collapsed="false"  data-theme="a" data-content-theme="a">
+                    <legend>Configurações do Servidor</legend>
+                    <label >Modo Demostração:</label>
+                       <select id="txtDemo" data-role="slider" data-1mini="true"  data-bind="options: SliderValues, value: isDemo" >
+                       </select>
+                    
+                    <label >Servidor:
+                        <input type="text" id="txtServidor" value="" data-m1ini="true"  data-inline="true" data-bind="value: ServerHost " >
+                        <!--<a vclick="app.setting.CheckHostAvaiable()" data-role="button" data-icon="arrow-l" data-inline="true" data-iconpos="left" data-bind="enable: DemoEnabled"  >Avançar</a>-->
+                    </label>
+                </fieldset>
+                <p></p>
+                <fieldset id="grpFabrica" data-role="collapsible" data-collapsed="false"  data-theme="a" data-content-theme="a">
+                    <legend>Configurações de Fabrica</legend>
+                    <a vclick="app.dropTableSettings()" data-role="button" data-icon="arrow-l" data-inline="true" data-iconpos="left"  >Excluir Dados Local</a>
+                </fieldset>
+            </form>            
+        </div>
+
+        
+        <div data-position="fixed" data-role="footer" data-tap-toggle="false" data-transition="none" class="footer-docs" >
+            <p class="jqm-version"></p>
+			<p>Copyright 2014, AutoMagazine - Sce Sistemas Ltda. </p>
+	    </div>
+    </div>
+
+    <!--PAGE-CONFIG-APP-->
+	<div data-role="page" id="page-config-app" data-theme="b" >
+        <!-- header --> 
+        <div data-role="header"  data-position="fixed" data-tap-toggle="false" data-transition="none" >
+            <a vclick="app.setting.onSave()" data-role="button"  data-icon="check" data-iconpos="left" class="ui-btn-right ui-btn-active" >
+                Salvar
+            </a>
+
+            <a goto="page-config" data-role="button" data-icon="arrow-l" data-iconpos="left"  class="ui-btn-left">
+                Voltar
+            </a>
+            <h3>
+                PDV Mobile
+            </h3>
+        </div>
+        <!-- content --> 
+        <div data-iscrol1l=""  data-role="content" >
+            <form>
+                <fieldset id="grpSistema" data-role="collapsible" data-collapsed="false" data-theme="a" data-content-theme="a">
+                    <legend>Configurações da Aplicação</legend>
+                        <label for="txtAutoSyncDB">Sincronizar Dados Auto.:</label>
+                        <select id="txtAutoSyncDB" data-role="slider" data-mi1ni="true"  data-inline="true" data-bind="options: SliderValues, value: isAutoSyncDB" >
+                        </select>
+                    <label for="cboAreaServico" class="select">Área de Serviço:</label>
+                        <select id="cboAreaServico" data-min1i="true" data-native-menu="true" data-inline="true" data-bind="options: Servicos, optionsText: 'AreaDeServicoName', optionsValue: 'AreaDeServicoid', value: IdAreaServico">
+                    </select>
+                </fieldset>                
+            </form>            
+        </div>
+
+        
+        <div data-position="fixed" data-role="footer" data-tap-toggle="false" data-transition="none" class="footer-docs" >
+            <p class="jqm-version"></p>
+			<p>Copyright 2014, AutoMagazine - Sce Sistemas Ltda. </p>
+	    </div>
+    </div>
+
+
+    <!--PAGE-SYNC-->
+	<div data-role="page" id="page-sync" data-theme="b"  >
+        <!-- header --> 
+        <div data-role="header"  data-position="fixed" data-tap-toggle="false" data-transition="none" >
+            <h3>
+                Sincronizar
+            </h3>
+        </div>
+
+        <!-- content -->
+        <div id="divsync" data-role="content">
+            <div class="progress-bar semmargem">
+              <input type="range" id="progress-bar" value="0" min="0" max="100" data-highlight="true" data-mini="true" />
+            </div>
+            <form>
+            <fieldset data-role="controlgroup"> 
+                <!--<legend>Syncronizar Dados:</legend>-->
+                <label readonly >Categorias
+                    <input type="checkbox" name="tab_categ" id="tab_categ" data-bind="checked: CategoriesChecked" onclick="return false"  >
+                    <span class="ui-li-count ui-btn-up-c ui-btn-corner-all ui-btn-active"><span data-bind="text: CategoriesQtde"/></span>
+                </label>
+                
+                <label  readonly >Categorias Produto    
+                    <input type="checkbox" id="tab_categ_prod" data-bind="checked: CategoriesItensChecked" onclick="return false" >
+                    <span class="ui-li-count ui-btn-up-c ui-btn-corner-all ui-btn-active"><span data-bind="text: CategoriesItensQtde"/></span>
+                </label>
+                    
+                <label readonly >Categorias Artigo
+                    <input type="checkbox" name="tab_categ_artigos" data-bind="checked: CategoriesItensArticlesChecked" id="tab_categ_artigos" onclick="return false" >
+                    <span class="ui-li-count ui-btn-up-c ui-btn-corner-all ui-btn-active"><span data-bind="text: CategoriesItensArticlesQtde"/></span>
+                </label>
+
+                <label readonly >Observações
+                    <input type="checkbox"  id="tab_categ_desc" data-bind="checked: CategoriesItensDescriptionChecked" readonly="true">
+                    <span class="ui-li-count ui-btn-up-c ui-btn-corner-all ui-btn-active"><span data-bind="text: CategoriesItensDescriptionQtde"/></span>
+                </label>
+
+                <label readonly>Produtos
+                    <input type="checkbox" name="tab_prod" id="tab_prod" data-bind="checked: ProductsChecked" readonly="true">
+                    <span class="ui-li-count ui-btn-up-c ui-btn-corner-all ui-btn-active"><span data-bind="text: ProductsQtde"/></span>
+                </label>
+                    
+                <label readonly >Códigos de Barra
+                    <input type="checkbox" id="tab_codebar" data-bind="checked: ProductsOtherCodeChecked" readonly="true">
+                    <span class="ui-li-count ui-btn-up-c ui-btn-corner-all ui-btn-active"><span data-bind="text: ProductsOtherCodeQtde"/></span>
+                </label>
+
+                <label readonly >Área de Produção
+                    <input type="checkbox" name="tab_area_prod" id="tab_area_prod" data-bind="checked: PreparationCenterChecked" readonly="true">
+                    <span class="ui-li-count ui-btn-up-c ui-btn-corner-all ui-btn-active"><span data-bind="text: PreparationCenterQtde"/></span>
+                </label>
+                    
+                <label readonly>Área de Serviços
+                    <input type="checkbox" id="tab_area_serv" data-bind="checked: ServicesChecked" readonly="true">
+                    <span class="ui-li-count ui-btn-up-c ui-btn-corner-all ui-btn-active"><span data-bind="text: ServicesQtde"/></span>
+                </label>
+<!--                    
+                <label readonly >Couvert
+                    <input type="checkbox"  id="tab_couvert" data-bind="checked: ServicesCouvertChecked"  readonly="true">
+                    <span class="ui-li-count ui-btn-up-c ui-btn-corner-all ui-btn-active"><span data-bind="text: ServicesCouvertQtde"/></span>
+                </label>
+                -->    
+            </fieldset>
+        </form>
+        </div>
+    </div>
+
+	<!--PAGE-LOGIN-->
+	<div data-role="page" id="page-login" data-theme="b"  >
+        <!-- header --> 
+        <div data-role="header"  data-position="fixed" data-tap-toggle="false" data-transition="none" >
+            <a id="pg-login-bt-login" data-role="button" data-icon="check" data-iconpos="left" class="ui-btn-right ui-btn-active"
+                data-bind="visible: isLoggedIn() == false, click: onLogin">
+                Login
+            </a>
+            <a  id="pg-login-bt-logou" data-role="button"  data-icon="check" data-iconpos="left" class="ui-btn-right ui-btn-active"
+                data-bind="visible: isLoggedIn(), click: onLogout" >
+                Logout
+            </a>
+
+            <a goto="page-start" id="pg-login-bt-voltar" data-role="button" data-icon="arrow-l" data-iconpos="left"  class="ui-btn-left">
+                Voltar
+            </a>
+            <h3>
+                PDV Mobile
+            </h3>
+        </div>
+        <!-- content -->
+        <div data-role="content">
+            
+            <h1 class="welcome" data-bind="visible: isLoggedIn">Bemvindo, <span data-bind="    text: username"></span>!</h1>
+            
+                
+           
+            <form data-bind="visible: !isLoggedIn(), events: { keyup: checkEnter }" data-theme="a"> 
+            <div id="pg-login-pnl-login" data-role="collapsible-set" data-theme="a">
+                <div data-role="collapsible" data-collapsed="false">
+                    <h3>
+                        Entrar no Sistema
+                    </h3>
+                    <div data-role="fieldcontain">
+                        <label for="pg-login-txt-username">
+                            Usuário:
+                        </label>
+                        <input  id="pg-login-txt-username" placeholder="Entre com o login" type="text" data-bind="value: username">
+                    </div>
+                    <div data-role="fieldcontain">
+                        <label for="pg-login-txt-senha">
+                            Senha:
+                        </label>
+                        <input  id="pg-login-txt-senha" placeholder="Entre com a Senha"
+                        value="" type="password" data-bind="value: password">
+                    </div>
+                </div>
+            </div>
+            </form>
+        </div>
+        <div data-position="fixed" data-role="footer" data-tap-toggle="false" data-transition="none" class="footer-docs" >
+            <p class="jqm-version"></p>
+			<p>Servidor:  <span data-bind="    text: NomeServidor"></span></p>
+	    </div>
+    </div>
+
+    <!--Home-->
+    <div data-role="page"  id="page-menu-home" class="my-page" data-url="page-home"  data-theme="b">
+        <!-- header -->    
+        <div data-role="header"  data-position="fixed" data-tap-toggle="false" data-transition="none" >
+            <a vclick="app.login.onLogout()"  data-role="button" data-icon="back" data-iconpos="left" class="ui-btn-right ui-btn-active">
+                Logout
+            </a>
+            <h3>
+                PDV Mobile
+            </h3>
+        </div>
+        <!-- content -->
+        <div data-role="content" >
+            <ul data-role="listview" data-inset="true">
+                <li><a id="btn-pedidos" vclick="app.gotopage('page-pedido')" >
+                    <img src="styles/images/home/pedidos.png"/>
+                    <h2>Pedidos</h2>
+                    <p>Permite a geração de pedidos de Restaurante</p>
+                    <p class="ui-li-aside">Ped</p>
+                    </a>
+                </li>
+                <li><a id="btn-orc" vclick="app.gotopage('page-orcamentos-home')" >
+                    <img src="styles/images/home/orcamentos.png">
+                    <h2>Orçamentos</h2>
+                    <p>Permite a geração de Orçamentos</p>
+                    <p class="ui-li-aside">Orç</p>
+                    </a>
+                </li>
+                <li><a id="btn-sinc" vclick="app.sync.ShowPage()" >
+                    <img src="styles/images/home/sincronizar.png"/>
+                    <h2>Sincronizar</h2>
+                    <p>Atualiza a Base de Dados com produtos e preços</p>
+                    <p class="ui-li-aside">Sinc</p>
+                </a></li>
+                <li><a id="btn-config" vclick="app.setting.ShowPage()" >
+                    <img src="styles/images/home/config.png"/>
+                    <h2>Configurações</h2>
+                    <p>Permite alterar as configurações do sistema</p>
+                    <p class="ui-li-aside">Cfg</p>
+                </a></li>
+            </ul>
+        </div>
+    </div>
+    
+    <!--Pagina PAGE-PEDIDO-->
+    <div data-role="page"  id="page-pedido" class="my-page" data-url="page-home"  data-theme="b">
+        <!-- header -->    
+        <div data-role="header"  data-position="fixed" data-tap-toggle="false" data-transition="none" >
+            <a vclick="app.gotopage('page-menu-home')" data-role="button" data-icon="arrow-l" data-iconpos="left" class="ui-btn-left" >
+                Voltar
+            </a>
+            <h3>
+                PDV Mobile
+            </h3>
+            
+        </div>
+        <!-- content -->
+        <div data-role="content" data-iscr1oll="" >
+            <ul data-role="listview" data-inset="true">
+                <li><a vclick="app.teclado.ShowPage('1')" >
+                    <img src="styles/images/home/pedidos.png">
+                    <h2>Abrir Mesa</h2>
+                    <p>Permite a geração de pedidos de Restaurante</p>
+                    <p class="ui-li-aside">Ped</p>
+                </a></li>
+                <li><a vclick="app.teclado.ShowPage('2')" >
+                    <img src="styles/images/home/orcamentos.png">
+                    <h2>Lançar Itens</h2>
+                    <p>Permite a geração de Orçamentos</p>
+                    <p class="ui-li-aside">Orç</p>
+                </a></li>
+                <li><a vclick="app.teclado.ShowPage('5')">
+                    <img src="styles/images/home/clientes.png">
+                    <h2>Cancelamento</h2>
+                    <p>Permite a administração de Clientes</p>
+                    <p class="ui-li-aside">Cli</p>
+                </a></li>
+                <li><a vclick="app.teclado.ShowPage('6')">
+                    <img src="styles/images/home/produtos.png">
+                    <h2>Pré-Conta</h2>
+                    <p>Permite a administração de Produtos</p>
+                    <p class="ui-li-aside">Prod</p>
+                </a></li>
+                <li><a vclick="app.status.AbreStatus()">
+                    <img src="styles/images/home/produtos.png">
+                    <h2>Status Mesa</h2>
+                    <p>Permite a administração de Produtos</p>
+                    <p class="ui-li-aside">Stat</p>
+                </a></li>
+                
+            </ul>
+        </div>
+        <!-- footer -->
+  <!--      <div data-position="fixed" data-role="footer" data-tap-toggle="false" data-transition="none" class="footer-docs" >
+            <a href="#page-about" data-shadow="false" data-iconshadow="false" data-icon="Info" data-iconpos="notext" data-rel="back" data-ajax="false">Sobre</a>
+        </div>-->
+    </div>
+
+    <!--Pagina PAGE-PEDIDO-MENU--> 
+    <div data-role="page"  id="page-pedido-menu" data-theme="b">
+        <!-- header -->    
+        <div data-role="header" style="float:left"  data-position="fixed" data-tap-toggle="false" data-transition="none" >
+            <a data-role="button" data-icon="arrow-l" data-iconpos="left" class="ui-btn-left CancelarPedido" >
+                Voltar
+            </a>
+            <a  data-role="button" data-icon="forward" data-iconpos="left" class="ui-btn-right ui-btn-active EnviarPedido">
+                Enviar
+            </a>
+            <h3><span data-bind="text: TituloPedido"/></h3>
+        </div>
+      
+        <!-- content -->
+        <div data-role="content" data-theme="b" class="semmargem">
+      
+                    <table id="grdCalc11" class="fill semmargem"  cellpadding="1" cellspacing="1" border="0" data-theme="a" style="border-color:red" >
+                         <tr class="coluna semmargem"  >
+                            <td id="td_mensagem" class="semmargem tdmsg" colspan="5" style="height:14%;min-height:14%">
+                                <ul data-bind="with: app.pedido, updateListviewOnChange: app.pedido, visible: IsObsVisible()" data-role="listview" data-split-icon="gear" data-split-theme="a" data-inset="true" class="UltimoProduto ui-foc1us ui-1bar-b semmargem" >
+                                    <li ><a href="#">
+                                    <h2>&nbsp<span class="ft-me1d" data-bind="text: Mensagem() + ''"/></h2></a>
+                                        <a vclick="app.pedido.ShowCategoriesItensDescription(eNavegacao.PrimeiraPagina);" data-rel="popup" data-position-to="window" data-transition="pop">Purchase album</a>
+                                    </li>
+                                </ul>                                
+                                <ul data-bind="with: app.pedido, updateListviewOnChange: app.pedido, visible: !IsObsVisible()" data-role="listview" data-split-icon="gear" data-split-theme="a" data-inset="true" class="UltimoProduto ui-fo1cus ui-1bar-b semmargem" >
+                                    <li data-icon="false" ><a href="#">
+                                    <h2>&nbsp<span class="ft-me1d tdmsg" data-bind="text: Mensagem() + '' "/></h2></a>
+                                    </li>
+                                </ul>        
+ <!--                               
+                                <ul id="lstUltimoProduto" data-bind="with: app.pedido, updateListviewOnChange: app.pedido" class="UltimoProduto ui-focus ui-1bar-b semmargem" data-role="listview" data-inset="true" data-theme="b" data-count-theme="b" data-split-icon="gear" data-split-theme="a" >
+                                    <li class="MargemPeq1 tdmsg" >
+                                        <div class="tdmsg"><h2><span class="ft-med" data-bind="text: Mensagem() + '.'"/>.</h2></div>
+                                        <a vclick="app.pedido.ShowCategoriesItensDescription(eNavegacao.PrimeiraPagina);"  data-bind="visible: IsObsVisible()"  data-theme="b" data-role="button" class="ui-li-count ui-btn-right ui-btn-active btn-obs"  >Obs</a>
+                                    </li>
+                                </ul>
+                    -->
+                            </td>
+                        </tr>
+                        <tr style="padding:0px">
+                            <td class="coluna tdprod"><div class="tdprod"><a id="ped-prod-1" data-theme="c" data-role="button" class="prod ui-corner-flat" >1</a></div></td>
+                            <td class="coluna tdprod"><div class="tdprod"><a id="ped-prod-2" data-theme="c" data-role="button" class="prod ui-corner-flat" >2</a></div></td>
+                            <td class="coluna tdprod"><div class="tdprod"><a id="ped-prod-3" data-theme="c" data-role="button" class="prod ui-corner-flat" >3</a></div></td>
+                       </tr>
+                        <tr style="margin:0px">
+                            <td class="coluna tdprod"><div class="tdprod"><a id="ped-prod-4" data-theme="c" data-role="button"  class="prod ui-corner-flat"   >4</a></div></td>
+                            <td class="coluna tdprod"><div class="tdprod"><a id="ped-prod-5" data-theme="c" data-role="button" class="prod ui-corner-flat"  >5</a></div></td>
+                            <td class="coluna tdprod"><div class="tdprod"><a id="ped-prod-6" data-theme="c" data-role="button" class="prod ui-corner-flat"  >6</a></div></td>
+                       </tr>
+                       <tr>
+                            <td class="coluna tdprod"><div class="tdprod"><a id="ped-prod-7" data-theme="c" data-role="button" class="prod ui-corner-flat"  >7</a></div></td>
+                            <td class="coluna tdprod"><div class="tdprod"><a id="ped-prod-8" data-theme="c" data-role="button" class="prod ui-corner-flat"  >8</a></div></td>
+                            <td class="coluna tdprod"><div class="tdprod"><a id="ped-prod-9" data-theme="c" data-role="button" class="prod ui-corner-flat"  >9</a></div></td>
+                       </tr>
+                       <tr>
+                            <td class="coluna tdprod"><div class="tdprod"><a id="ped-prod-10" data-theme="c" data-role="button" class="prod ui-corner-flat"  >0</a></div></td>
+                            <td class="coluna tdprod"><div class="tdprod"><a id="ped-prod-11" data-theme="c" data-role="button" class="prod ui-corner-flat"  >0</a></div></td>
+                            <td class="coluna tdprod"><div class="tdprod"><a id="ped-prod-12" data-theme="c" data-role="button" class="prod ui-corner-flat"  >0</a></div></td>
+                       </tr>
+                         <tr class="coluna semmargem"  >
+                            <td class="coluna tdQtde" style="height:12%;min-height:12%" >
+                                <table class="fill semmargem"  cellpadding="0" cellspacing="0" border="0" data-theme="a" style="border-color:green">
+                                    <tr><td class="semmargem" >
+                                            <a id="btnTipoEsq" data-role="button" data-mini="true" data-iconpos="left" data-icon="arrow-l"   class="pr1od ui-corner-flat"></a>
+                                        </td>
+                                        <td class="semmargem" >
+                                            <a id="btnTipoDir" data-role="button" data-mini="true"  data-iconpos="right" data-icon="arrow-r" class="ui-corner-flat"></a>
+                                        </td>
+                                        </tr>
+                                    </table>
+                            </td>
+                            <td class="coluna tdQtde semmargem">
+                                <a id="btnQtde" data-role="button" data-mini="true" data-inset="true"  class="ui-corner-flat">Qtde</a>
+                            </td>
+                            <td class="coluna tdQtde">
+                                <table class="fill semmargem"  cellpadding="0" cellspacing="0" border="0" data-theme="a" >
+                                    <tr><td class="semmargem" >
+                                            <a id="btnProdEsq"  data-role="button" data-mini="true" data-iconpos="left" data-icon="arrow-l"   class="pr1od ui-corner-flat"></a>
+                                        </td>
+                                        <td class="semmargem" >
+                                            <a id="btnProdDir" data-role="button"  data-mini="true" data-iconpos="right" data-icon="arrow-r" class="ui-corner-flat"></a>
+                                        </td>
+                                        </tr>
+                                    </table>
+
+                            </td>
+                         </tr>
+                       <tr>
+                            <td class="coluna tdcat"><div class="tdcat"><a id="ped-categ-1" data-theme="c" data-role="button" class="categ ui-corner-flat"  >Bebidas</a></div></td>
+                            <td class="coluna tdcat"><div class="tdcat"><a id="ped-categ-2" data-theme="d" data-role="button" class="categ ui-corner-flat"  >Carnes</a></div></td>
+                            <td class="coluna tdcat"><div class="tdcat"><a id="ped-categ-3" data-theme="e" data-role="button" class="categ ui-corner-flat"  >Saladas</a></div></td>
+                       </tr>
+                       <tr>
+                            <td class="coluna tdcat"><div class="tdcat"><a id="ped-categ-4" data-theme="f" data-role="button" class="categ ui-corner-flat"  >Pizzas</a></div></td>
+                            <td class="coluna tdcat"><div class="tdcat"><a id="ped-categ-5" data-theme="g" data-role="button" class="categ ui-corner-flat"  >Sobremesas</a></div></td>
+                            <td class="coluna tdcat"><div class="tdcat"><a id="ped-categ-6" data-theme="h" data-role="button" class="categ ui-corner-flat"  >Outros</a></div></td>
+                       </tr>
+                     </table>
+        </div>     
+          
+        <div data-position="fixed" data-role="footer" data-tap-toggle="false" data-transition="none" class="footer-pedido" >
+            <div data-role="navbar" data-iconpos="top">
+                <ul>
+                    <li>
+                        <a goto="page-pedido-menu" data-role="button" data-theme="b" data-icon="grid" class="Footer-Ped">
+                            Menu
+                        </a>
+                    </li>
+                    <li>
+                        <a goto="page-pedido-codigo" data-role="button" data-theme="b" data-icon="edit" class="Footer-Ped">
+                            Código
+                        </a>
+                    </li>
+                    <li>
+                        <a goto="page-pedido-itens" data-role="button" data-theme="b" data-icon="home"
+                        >
+                            Itens
+                        </a>
+                    </li>
+                    <li>
+                        <a goto="page-pedido-cliente" data-role="button" data-theme="b" data-icon="star">
+                            Cliente
+                        </a>
+                    </li>
+                </ul>
+            </div>
+       </div>
+    </div>
+    
+  
+    <!--Pagina PAGE-PEDIDO-CODIGO--> 
+	<div data-role="page"  id="page-pedido-codigo" data-theme="b">
+        <!-- header -->    
+        <div data-role="header" style="float:left"  data-position="fixed" data-tap-toggle="false" data-transition="none" >
+            <a data-role="button" data-icon="arrow-l" data-iconpos="left" class="ui-btn-left CancelarPedido" >
+                Voltar
+            </a>
+            <a data-role="button" data-icon="forward" data-iconpos="left" class="ui-btn-right ui-btn-active EnviarPedido">
+                Enviar
+            </a>
+            <h3><span data-bind="text: TituloPedido"/></h3>
+        </div>
+      
+        <!-- content -->
+        <div data-role="content" data-theme="b" class="semmargem">
+                    <table id="Table1" cols="6" class="fill"  cellpadding="1" cellspacing="1" border="0" data-theme="a" >
+                         <tr class="coluna semmargem"  style1="height:12%;">
+                            <td colspan="6"  id="td_mensagem" class="semmargem tdmsg" style="height:14%;min-height:14%">
+                                <ul data-bind="with: app.pedido, updateListviewOnChange: app.pedido, visible: IsObsVisible()" data-role="listview" data-split-icon="gear" data-split-theme="a" data-inset="true" class="UltimoProduto ui-foc1us ui-1bar-b semmargem" >
+                                    <li ><a href="#">
+                                    <h2>&nbsp<span class="ft-me1d" data-bind="text: Mensagem() + ''"/></h2></a>
+                                        <a vclick="app.pedido.ShowCategoriesItensDescriptionCodigo(eNavegacao.PrimeiraPagina);" data-rel="popup" data-position-to="window" data-transition="pop">Purchase album</a>
+                                    </li>
+                                </ul>                                
+                                <ul data-bind="with: app.pedido, updateListviewOnChange: app.pedido, visible: !IsObsVisible()" data-role="listview" data-split-icon="gear" data-split-theme="a" data-inset="true" class="UltimoProduto ui-fo1cus ui-1bar-b semmargem" >
+                                    <li data-icon="false" ><a href="#">
+                                    <h2>&nbsp<span class="ft-me1d tdmsg" data-bind="text: Mensagem() + '' "/></h2></a>
+                                    </li>
+                                </ul>        
+                            </td>
+<!--                             
+                            <td class="coluna semmargem" colspan="5">
+                                <ul data-bind="with: UltimoProduto, updateListviewOnChange: UltimoProduto" class="UltimoProduto ui-focus ui-bar-b semmargem" data-role="listview" data-inset="true" data-theme="b" data-count-theme="b">
+                                    <li>
+                                        <h2><span data-bind="text: Titulo"/></h2>
+                                        <span class="ui-li-count ui-btn-active"><span class=""  data-bind="text: subtotalFormated"/></span>
+                                    </li>
+                                </ul>
+                            </td>
+-->                             
+                        </tr>
+<!--                        <tr style="height:16%;">
+                            <td  colspan="5">
+                                <div  class="fill ui-bar-b" data-theme="b">
+                                    <p id="P1" align="right"><span class="ft-big" data-bind="text: InputCodebar"/></p>
+                                </div> 
+                            </td>
+                            <td class="coluna" colspan="3" ><a  data-theme="b" data-role="button" class="num ui-corner-flat ft-big ui-btn ui-icon-delete ui-btn-icon-notext" vclick="app.pedido.SendTecla('-')" >D</a></td>
+                        </tr>
+-->                        <tr style="height:16%;">                    
+                            <td  colspan="6">
+                                <ul data-role="listview" data-split-icon="delete" data-split-theme="c" data-inset="false" class="UltimoProduto ui-foc1us ui-1bar-b semmargem" >
+                                        <li >
+                                            <a >
+                                            <h2  align="right">&nbsp<span class="ft-big" data-bind="text: InputCodebar() + ''"/></h2>
+                                            </a>
+                                            <a class="num"  tecla="-" data-rel="popup" data-position-to="window" data-transition="pop" vclick="app.pedido.SendTecla('-')">Purchase album</a>
+                                        </li>
+                                </ul>
+                            </td>
+                        </tr>                        
+                        <tr style="padding:0px">
+                            <td colspan="2"  class="coluna tdnum"><div class="tdnum"><a  data-theme="b" data-role="button" class="ui-corner-flat ft-big" vclick="app.pedido.SendTecla('1')" >1</a></div></td>
+                            <td colspan="2"  class="coluna tdnum"><div class="tdnum"><a  data-theme="b" data-role="button" class="ui-corner-flat ft-big" vclick="app.pedido.SendTecla('2')" >2</a></div></td>
+                            <td colspan="2"  class="coluna tdnum"><div class="tdnum"><a  data-theme="b" data-role="button" class="ui-corner-flat ft-big" vclick="app.pedido.SendTecla('3')" >3</a></div></td>
+                       </tr>
+                                <tr style="margin:0px">
+                            <td colspan="2"  class="coluna tdnum"><div class="tdnum"><a data-theme="b" data-role="button"  class="ui-corner-flat ft-big" vclick="app.pedido.SendTecla('4')"  >4</a></div></td>
+                            <td colspan="2"  class="coluna tdnum"><div class="tdnum"><a data-theme="b" data-role="button" class="ui-corner-flat ft-big" vclick="app.pedido.SendTecla('5')" >5</a></div></td>
+                            <td colspan="2"  class="coluna tdnum"><div class="tdnum"><a data-theme="b" data-role="button" class="ui-corner-flat ft-big" vclick="app.pedido.SendTecla('6')" >6</a></div></td>
+                       </tr>
+                       <tr>
+                            <td colspan="2"  class="coluna tdnum"><div class="tdnum"><a data-theme="b" data-role="button" class="ui-corner-flat ft-big" vclick="app.pedido.SendTecla('7')" >7</a></div></td>
+                            <td colspan="2"  class="coluna tdnum"><div class="tdnum"><a data-theme="b" data-role="button" class="ui-corner-flat ft-big" vclick="app.pedido.SendTecla('8')" >8</a></div></td>
+                            <td colspan="2"  class="coluna tdnum"><div class="tdnum"><a data-theme="b" data-role="button" class="ui-corner-flat ft-big" vclick="app.pedido.SendTecla('9')" >9</a></div></td>
+                       </tr>
+                       <tr>
+                            <td colspan="2"  class="coluna tdnum"><div class="tdnum"><a data-theme="b" data-role="button" class="ui-corner-flat ft-big" vclick="app.teclado.ShowPage('3')" >Qtd</a></div></td>
+                            <td colspan="2"  class="coluna tdnum"><div class="tdnum"><a data-theme="b" data-role="button" class="ui-corner-flat ft-big" vclick="app.pedido.SendTecla('0')" >0</a></div></td>
+                            <td colspan="2"  class="coluna tdnum"><div class="tdnum"><a data-theme="b" data-role="button" class="ui-corner-flat ft-big" vclick="app.pedido.adicionarItemCodBarra()"  >Ok</a></div></td>
+                       </tr>
+                     </table>
+        </div>     
+          
+        <div data-position="fixed" data-role="footer" data-tap-toggle="false" data-transition="none" class="footer-pedido" >
+                <div data-role="navbar" data-iconpos="top">
+                    <ul>
+                        <li>
+                            <a goto="page-pedido-menu" data-role="button" data-theme="b" data-icon="grid" class="Footer-Ped">
+                                Menu
+                            </a>
+                        </li>
+                        <li>
+                            <a goto="page-pedido-codigo" data-role="button" data-theme="b" data-icon="edit" class="Footer-Ped">
+                                Código
+                            </a>
+                        </li>
+                        <li>
+                            <a goto="page-pedido-itens" data-role="button" data-theme="b" data-icon="home"
+                            >
+                                Itens
+                            </a>
+                        </li>
+                        <li>
+                            <a goto="page-pedido-cliente" data-role="button" data-theme="b" data-icon="star">
+                                Cliente
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+           </div>
+    </div>
+
+    
+    <!--Pagina PAGE-PEDIDO-ITENS--> 
+    <div data-role="page"  id="page-pedido-itens" data-theme="b">
+        <!-- header -->    
+        <div data-role="header" style="float:left"  data-position="fixed" data-tap-toggle="false" data-transition="none" >
+            <a data-role="button" data-icon="arrow-l" data-iconpos="left" class="ui-btn-left CancelarPedido" >
+                Voltar
+            </a>
+            <a data-role="button" data-icon="forward" data-iconpos="left" class="ui-btn-right ui-btn-active EnviarPedido">
+                Enviar
+            </a>
+            <h3><span data-bind="text: TituloPedido"/></h3>
+        </div>
+
+        <!-- content -->
+        <div data-role="content" data-theme="b" class="semmargem" >
+            <table id="tblItens" class="fill"  cellpadding="1" cellspacing="1" border="0" data-theme="a" style="border-color:red; overflow-y: scroll;" >
+                <thead>
+                    <tr class="coluna semmargem"  style="height:12%;" >
+                            <td  class="coluna semmargem" colspan="5">
+                                <ul id="ped-subtotal" class="UltimoProduto ui-fo1cus ui-bar-b semmargem" data-role="listview" data-inset="true" data-theme="b" data-count-theme="e">
+                                    <li class="nopadv">
+                                        <h2><span style='font-size:1.5em;' data-bind="text: TituloPedido" ></span></h2>
+                                        <span  class="ui-li-count ui-btn-act1ive" style="font-size:1.2em;background:#167f39 ;border-color:#1eb14f ;color:#ffffff ;text-shadow:0  1px  0  #444444 ;"><span class=""  data-bind="text: TotalPedidoFormated"/></span>
+                                    </li>
+                                </ul>
+                            </td>
+                        </tr>
+                        <tr style="height:0%;width:100%">
+                            <td class="semmargem">
+                                <div data-role="navbar" data-iconpos="left">
+                                    <ul>
+                                        <li>
+                                            <a vclick="app.pedido.SearchProd()" data-role="button" data-theme="f" data-icon="search" class="Footer-Ped">Por Nome</a>
+                                        </li>
+                                        <li>
+                                            <a vclick="app.pedido.adCamera()" data-role="button" data-theme="g" data-icon="camera" class="Footer-Ped">Pela Câmera</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </td>
+                        </tr>                
+                </thead>
+                <tbody>
+                <tr class="semmargem" style="width:100%; overflow-y:hidden;">
+                        <td style="vertical-align:top1" class="semmargem">
+                        <div id="divItensPedido" class="fill semmargem" data-iscroll="" styl1e="overflow-y:hidden;">
+                        <ul  id="lstItensPedido"  data-role="listview" data-split-theme="a" data-inset="true" data-bi1nd="foreach: PedidoItens, updateListviewOnChange: PedidoItens">
+                            <li cl ass="fill" data-role="list-divider">Itens do Pedido</li>
+                            <!-- ko foreach: PedidoItens, updateListviewOnChange: PedidoItens  -->
+                            <li data-icon="edit" ><a data-bind='    click: $parent.onEditarItem' >
+                                <!--<h1><span data-bind="text: Qtde() + ' x ' + NomeDoProduto()"/></h1>-->
+                                        <h1 class="ft-qtde-itens"><strong><span class="ft-qtde-itens" data-bind="text: Qtde() + '  x  ' + NomeDoProduto()"/></strong></h1>
+                                        <!-- ko foreach: Descriptions  -->
+                                        <h1><span data-bind="text: ObservacaoName"/></h1>
+                                        <!-- /ko -->
+                                        <span class="ui-li-count ui-btn-active"><span data-bind="text: subtotalFormated"/></span>
+                                </a>
+                                
+                            </li>
+                            <!-- /ko -->
+                        </ul>
+                        </div>
+                        </td>
+                </tr>
+                </tbody>
+            </table>
+        </div>     
+         
+        <div data-position="fixed" data-role="footer" data-tap-toggle="false" data-transition="none" class="footer-pedido" >
+            <div data-role="navbar" data-iconpos="top">
+                <ul>
+                    <li>
+                        <a goto="page-pedido-menu" data-role="button" data-theme="b" data-icon="grid" class="Footer-Ped">
+                            Menu
+                        </a>
+                    </li>
+                    <li>
+                        <a goto="page-pedido-codigo" data-role="button" data-theme="b" data-icon="edit" class="Footer-Ped">
+                            Código
+                        </a>
+                    </li>
+                    <li>
+                        <a goto="page-pedido-itens" data-role="button" data-theme="b" data-icon="home"
+                        >
+                            Itens
+                        </a>
+                    </li>
+                    <li>
+                        <a goto="page-pedido-cliente" data-role="button" data-theme="b" data-icon="star">
+                            Cliente
+                        </a>
+                    </li>
+                </ul>
+            </div>
+       </div>
+
+    </div>
+
+    <!--Pagina PAGE-EDIT-PEDIDO-ITEM--> 
+    <div data-role="page"  id="page-edit-pedido-item" data-theme="b">
+        <!-- header -->    
+        <div data-role="header" style="float:left"  data-position="fixed" data-tap-toggle="false" data-transition="none" >
+            <a vclick="app.gotopage('page-pedido-itens');" data-role="button" data-icon="arrow-l"
+            data-iconpos="left" class="ui-btn-left" >
+                Pedido
+            </a>
+            <h3>Pedido Item</h3>
+        </div>
+
+        <div data-role="content" data-theme="b" class="MargemPeqPage" >
+                <ul data-role="listview" data-inset="true" data-mini="true" >
+                    <li data-role="list-divider">Item do Pedido</li>
+                    <li >
+                        <h2><span data-bind="text: ItemSelecionado().Qtde() + ' x ' + ItemSelecionado().NomeDoProduto()"/></h2>
+                        <span class="ui-li-count " style="font-size:13px; color: #FFFFFF;   text-shadow: 0 1px 0 #444444; border-color: #FF1e1e; background: #bf1616;" >
+                            <a id="btnExcluirItem" style="font-size:13px; color: #FFFFFF;   text-shadow: 0 1px 0 #444444; border-color: #FF1e1e; background: #bf1616;" >Excluir</a>
+                        </span>
+                    </li>
+                    <!-- ko foreach: ItemSelecionado().Descriptions , updateListviewOnChange: ItemSelecionado().Descriptions -->
+                    <li >
+                        <h1><span data-bind="text: ObservacaoName"/></h1>
+                        <span class="ui-li-count " style="font-size:13px;color: #FFFFFF;   text-shadow: 0 1px 0 #444444; border-color: #FF1e1e; background: #bf1616;" >
+                            <a data-bind="click: $parent.onExcluirItemObs" style="font-size:13px;color: #FFFFFF;   text-shadow: 0 1px 0 #444444; border-color: #FF1e1e; background: #bf1616;"  >Excluir</a>
+                        </span>
+                    </li>
+                    <!-- /ko -->
+                </ul>                                
+                <!--<a data-theme="b" data-role="button" data-min1i="true" data-inlin1e="true" data-icon="recycle" >Alterar Qtde</a>-->
+                <a vclick="app.pedido.onEditarItemQtde()" data-theme="b" data-role="button" data-min1i="true" data-inlin1e="true" data-icon="recycle" >Alterar Qtde</a>
+        </div>     
+         
+        <div data-position="fixed" data-role="footer" data-tap-toggle="false" data-transition="none" class="footer-docs" >
+            <div data-role="navbar" data-iconpos="top">
+                <ul>
+                    <li>
+                        <a goto="page-edit-pedido-item" data-role="button" data-theme="b" data-icon="grid" class="Footer-Ped">
+                            Item
+                        </a>
+                    </li>
+                    <li>
+                        <a goto="page-edit-pedido-anotacao" data-role="button" data-theme="b" data-icon="edit" class="Footer-Ped">
+                            Anotação
+                        </a>
+                    </li>
+                </ul>
+            </div>
+       </div>
+    </div>
+
+    <!--Pagina PAGE-EDIT-PEDIDO-ANOTACAO--> 
+    <div data-role="page"  id="page-edit-pedido-anotacao" data-theme="b">
+        <!-- header -->    
+        <div data-role="header" style="float:left"  data-position="fixed" data-tap-toggle="false" data-transition="none" >
+            <a vclick="app.gotopage('page-pedido-itens');" data-role="button" data-icon="arrow-l" data-iconpos="left" class="ui-btn-left" >
+                Pedido
+            </a>
+            <h3>Pedido Item</h3>
+        </div>
+
+        <div data-role="content" data-theme="b" class="MargemPeqPage" >
+                <ul id="ulSig" data-role="listview" data-inset="true" data-theme="a">
+                    <li data-theme="a" data-role="list-divider">Anotação</li>
+                    <li data-role="fieldcontain">
+<!--                            <form method="post" action="#" class="sigPad"> 
+                        <div class="sig sigWrapper current" style="display: block;"> 
+                            <div class="typed" style="display: none;"></div> 
+                            <canvas id="pad" class="pad" width="270px" height="150px"></canvas>
+                            <input type="hidden" name="output" class="output" value=""> 
+                        </div>
+                        </form>-->
+                        <form method="post" action="" class="sigPad">
+                                     <!-- <label for="name">Print your name</label>
+                                      <input type="text" name="name" id="name" class="name">
+                                      <p class="typeItDesc">Review your signature</p>
+                                      <p class="drawItDesc">Draw your signature</p>-->
+                                      <ul class="sigNav">
+                                    <!--    <li class="typeIt"><a href="#type-it" class="current">Type It</a></li>-->
+                                        <!--<li class="drawIt"><a href="#draw-it">Draw It</a></li>-->
+                                        <!--<li class="clearButton"><a href="#clear">Clear</a></li>-->
+                                      </ul>
+                                      <div class="sig sigWrapper">
+                                        <div class="typed"></div>
+                                        <canvas class="pad" width="270" height="150"></canvas>
+                                        <input type="hidden" name="output" class="output">
+                                      </div>
+                                    </form>                                                         
+                    </li>
+                    <li data-role="fieldcontain">
+                        <p1>
+                        <a id="btnLimparAnotacaoItem" class="ui-btn-lef" data-theme="a" data-role="button" data-mini="true" data-inline="true" data-icon="recycle" >Limpar</a>
+                        <a id="btnSalvarAnotacaoItem" class="ui-btn-rigt" data-theme="a" data-role="button" data-mini="true" data-inline="true" data-icon="check" >Salvar</a>
+                        </p1>
+                    </li>
+                 </ul>
+        </div>     
+         
+        <div data-position="fixed" data-role="footer" data-tap-toggle="false" data-transition="none" class="footer-docs" >
+            <div data-role="navbar" data-iconpos="top">
+                <ul>
+                    <li>
+                        <a goto="page-edit-pedido-item" data-role="button" data-theme="b" data-icon="grid" class="Footer-Ped">
+                            Item
+                        </a>
+                    </li>
+                    <li>
+                        <a goto="page-edit-pedido-anotacao" data-role="button" data-theme="b" data-icon="edit" class="Footer-Ped">
+                            Anotação
+                        </a>
+                    </li>
+                </ul>
+            </div>
+       </div>
+    </div>
+
+
+     <!--Pagina PAGE-PEDIDO-PRODUTO--> 
+    <div data-role="page" id="page-produto"  data-theme="b">
+        <!-- header -->    
+        <div data-role="header" style="float:left"  data-position="fixed" data-tap-toggle="false" data-transition="none" >
+            <a data-rel="back" data-role="button" data-icon="arrow-l"
+            data-iconpos="left" class="ui-btn-left" >
+                Pedido
+            </a>
+            <h3>Produtos</h3>
+        </div>
+
+        <div data-role="content" data-iscroll="" data-theme="b" class="semmargem" style="width:100%;min-width:100%">
+            <ul data-icon="plus"  data-iconpos="left" class="fill semmargem" data-role="listview" data-filter="true" data-filter-placeholder="Insira o Nome..." id="productList" data-inset="true"> 
+            </ul>
+        </div>     
+         
+<!--        <div data-position="fixed" data-role="footer" data-tap-toggle="false" data-transition="none" class="footer-docs" >
+            
+       </div>-->
+    </div>
+
+    
+    <!--Pagina PAGE-TECLADO-NUMERICO--> 
+	<div data-role="page"  id="page-teclado-numerico" data-theme="b">
+        <!-- header -->    
+        <div data-role="header" style="float:left"  data-position="fixed" data-tap-toggle="false" data-transition="none" >
+            <a id="teclado-numerico-cancel" data-role="button" data-icon="arrow-l"
+            data-iconpos="left" class="ui-btn-left" >
+                Voltar
+            </a>
+            <a id="teclado-numerico-Enviar" data-role="button" data-transition1="slide" data-icon="forward" data-iconpos="left" class="ui-btn-right ui-btn-active"><span data-bind="text: LegendaBotao"/></a>
+            <h3><span data-bind="text: Titulo"/></h3>
+        </div>
+      
+        <!-- content -->
+        <div data-role="content" data-theme="b" class="semmargem">
+                    <table id="Table3" cols="6" class="fill" cellpadding="1" cellspacing="1" border="0" data-theme="a" >
+                        <tr style="height:10%;width:100%;">
+                            <td colspan="6" class="semmargem ui-foc1us">
+                                <div class="ui-body ui-focu1s ui-corner-all ui-body-b" >
+                                    <strong><span class="ft-med"  data-bind="text: Legenda"/></strong>
+		                        </div>
+                            </td>
+                        </tr>
+    <!--                    <tr style="height:16%;">
+                            <td  colspan="5">
+                                <div  class="fill ui-bar-b" data-theme="b">
+                                    <p id="P3" align="right"><span class="ft-big" data-bind="text: NumInformado"/></p>
+                                </div> 
+                            </td>
+                            <td class="coluna" colspan="3" ><a  data-theme="b" data-role="button" class="num ui-corner-flat ft-big ui-btn ui-icon-delete ui-btn-icon-notext" tecla="-" >D</a></td>
+    
+                        </tr>-->
+                        <tr style="height:16%;">                    
+                            <td  colspan="6">
+                                <ul data-role="listview" data-split-icon="delete" data-split-theme="c" data-inset="false" class="UltimoProduto ui-foc1us ui-1bar-b semmargem" >
+                                        <li ><a href="#">
+                                            <h2  align="right">&nbsp<span class="ft-big" data-bind="text: NumInformado() + ''"/></h2>
+                                            </a>
+                                            <a class="num"  tecla="-" data-rel="popup" data-position-to="window" data-transition="pop">Purchase album</a>
+                                        </li>
+                                </ul>
+                            </td>
+                        </tr>
+                        <tr style="padding:0px">
+                            <td colspan="2" class="coluna"><a  data-theme="b" data-role="button" class="num ui-corner-flat ft-big" tecla="1" >1</a></td>
+                            <td colspan="2" class="coluna"><a  data-theme="b" data-role="button" class="num ui-corner-flat ft-big" tecla="2" >2</a></td>
+                            <td  colspan="2" class="coluna"><a  data-theme="b" data-role="button" class="num ui-corner-flat ft-big" tecla="3" >3</a></td>
+                       </tr>
+                            <tr style="margin:0px">
+                            <td colspan="2"  class="coluna"><a data-theme="b" data-role="button" class="num ui-corner-flat ft-big" tecla="4" >4</a></td>
+                            <td colspan="2"  class="coluna"><a data-theme="b" data-role="button" class="num ui-corner-flat ft-big" tecla="5" >5</a></td>
+                            <td colspan="2"  class="coluna"><a data-theme="b" data-role="button" class="num ui-corner-flat ft-big" tecla="6" >6</a></td>
+                       </tr>
+                       <tr>
+                            <td colspan="2"  class="coluna"><a data-theme="b" data-role="button" class="num ui-corner-flat ft-big" tecla="7" >7</a></td>
+                            <td colspan="2"  class="coluna"><a data-theme="b" data-role="button" class="num ui-corner-flat ft-big" tecla="8" >8</a></td>
+                            <td colspan="2"  class="coluna"><a data-theme="b" data-role="button" class="num ui-corner-flat ft-big" tecla="9" >9</a></td>
+                       </tr>
+                       <tr>
+                            <td colspan="2" class="coluna"><a data-theme="b" data-role="button" class="num ui-corner-flat ft-big" tecla="," >,</a></td>
+                            <td colspan="2"  class="coluna"><a data-theme="b" data-role="button" class="num ui-corner-flat ft-big" tecla="0" >0</a></td>
+                            <td colspan="2" class="coluna"><a data-theme="b" data-role="button" class="Enviarteclado ui-corner-flat ft-big" tecla="-" >Ok</a></td>
+                       </tr>
+                     </table>
+        </div>     
+          
+        <div data-position="fixed" data-role="footer" data-tap-toggle="false" data-transition="none" class="footer-docs" >
+            
+       </div>
+    </div>
+
+    
+    <!--Pagina PAGE-CANCELAMENTO--> 
+    <div data-role="page"  id="page-cancelamento" data-theme="b">
+        <!-- header -->    
+        <div data-role="header" style="float:left"  data-position="fixed" data-tap-toggle="false" data-transition="none" >
+            <a id="cancelamento-cancel" data-role="button" data-icon="arrow-l" data-iconpos="left" class="ui-btn-left Voltar" >
+                Voltar
+            </a>
+            <a id="cancelamento-enviar" data-role="button" data-icon="forward" data-iconpos="left" class="ui-btn-right ui-btn-active">
+                Enviar
+            </a>
+            <h3><span data-bind="text: TituloPedido"/></h3>
+        </div>
+
+        <!-- content -->
+        <div data-role="content" data-theme="b" class="nopad" >
+            <div id="ContentCanc1" class="ui-bar ui-bar-b" >
+                <ul data-role="listview" data-inset="true"  data-theme="a">
+				    <li data-role="list-divider">Motivo de Cancelamento:</li>
+				    <li><select  id="cboCancelReason"  data-theme="a" data-mini="true" data-native-menu="true" data-inline="false" data-bind="options: CancelReasons, optionsText: 'dsMotivoCanc', optionsValue: 'IdMotivoCanc', value: IdMotivoCancSeleted">
+                        </select>
+                    </li>
+                    <li  >
+                        <input data-mini="true"  type="checkbox" name="chkTodosCanc" id="chkTodosCanc" />                    
+                        <label for="chkTodosCanc" class="nobord">Selecionar Todos os Itens</label>
+                    </li>                                    
+			    </ul>                                            
+            </div>
+            <div id="ContentCanc2" class="ui-bar ui-bar-b scroller" data-iscroll="" >
+                <ul  id="lstItensPedidoCanc" data-role="listview"  data-split-icon="gear" data-filter="false" data-theme="a" data-inset="true" data-bind="foreach: PedidoItens, updateListviewOnChange: PedidoItens">
+                    <li >
+                        <a href="#" class="nopad" >
+                            <fieldset data-role="controlgroup" class="nobord" >                                                        
+                                <input class="chk" type="checkbox" name="t" id="t"  data-bind="checked: ItemChecked" data-theme="a" />                    
+                                <label for="t"  class="nobord"> 
+                                    <label  class="nopad"> 
+                                        <h1><span class="ft-qtde-itens" data-bind="text: Qtde() + '  x  ' + NomeDoProduto()"/></h1>
+                                        <!-- ko foreach: Descriptions  -->
+                                        <p><span data-bind="text: ObservacaoName"/></p>
+                                        <!-- /ko -->
+                                    </label> 
+                                </label>
+                            </fieldset>    
+                        </a>
+                    </li>                                    
+                </ul>
+            </div>
+        </div>     
+         
+       <div data-position="fixed" data-role="footer" data-tap-toggle="false" data-transition="none" class="footer-docs" >
+
+       </div>
+
+    </div>
+    
+  <!--PAGE-ERRO-->
+	<div data-role="page" id="page-erro" data-theme="b" >
+        <div data-role="header"  data-position="fixed" data-tap-toggle="false" data-transition="none" >
+            <a goto="page-start" data-role="button" data-icon="arrow-l" data-iconpos="left"  class="ui-btn-left">
+                Voltar
+            </a>
+            <h3>PDV Mobile</h3>
+        </div>
+        <!-- content -->
+        <div id="erro"  data-iscroll="" data-role="content" >
+        </div>
+
+        
+       <div data-position="fixed" data-role="footer" data-tap-toggle="false" data-transition="none" class="footer-docs" >
+            <p class="jqm-version"></p>
+			<p>Copyright 2014, AutoMagazine - Sce Sistemas Ltda. </p>
+	    </div>
+    </div>
+
+        <!--Pagina PAGE-CONTA--> 
+    <div data-role="page"  id="page-conta" data-theme="b">
+        <!-- header -->    
+        <div data-role="header" style="float:left"  data-position="fixed" data-tap-toggle="false" data-transition="none" >
+            <a id="conta-cancel" data-role="button" data-icon="arrow-l" data-iconpos="left" class="ui-btn-left Voltar" >
+                Voltar
+            </a>
+            <a id="conta-enviar" data-role="button" data-icon="forward" data-iconpos="left" class="ui-btn-right ui-btn-active">
+                Imprimir
+            </a>
+            <h3><span data-bind="text: TituloPedido"/></h3>
+        </div>
+
+        <!-- content -->
+        <div data-role="content" data-theme="b" class="nopad" >
+            <div id="ContentConta1" class="ui-bar ui-bar-b nopadv" >
+                <ul data-role="listview" data-inset="true"  data-theme="a" data-count-theme="b">
+				    <li style="font-size:1.5em;" data-role="list-divider" class="pad1">Mesa 30
+                    <span style="font-size:1em;" class="ui-li-count ui-btn-active">R$ 120,00</span>
+                    </li>
+			    </ul>  
+            </div>
+            <div id="ContentConta2" class="ui-bar ui-bar-b scroller" data-iscroll="" >
+                <ul  id="lstItensPedidoConta" data-role="listview"  data-split-icon="gear" data-filter="false" data-theme="a" data-count-theme="b"  data-inset="true">
+                    <li data-role="list-divider">Itens do Pedido</li>
+                    <!-- ko foreach: PedidoItens, updateListviewOnChange: PedidoItens  -->
+                    <li class="nopadv">
+                        <h1><span data-bind="text: Qtde + '  x  ' + NomeDoProduto"/></h1>
+                        <!-- ko foreach: Descriptions  -->
+                        <p><span data-bind="text: ObservacaoName"/></p>
+                        <!-- /ko -->
+                        <span class="ui-li-count ui-btn-active"><span data-bind="text: TotLiq"/></span>    
+                    </li>   
+                    <!-- /ko -->
+                </ul>
+            </div>
+        </div>     
+  
+        <div data-position="fixed" data-role="footer" data-tap-toggle="false" data-transition="none" class="footer-docs" >
+            
+       </div>
+
+    </div>
+
+    
+    <!--Pagina PAGE-STATUS-MESA--> 
+    <div data-role="page"  id="page-status" data-theme="b">
+        <!-- header -->    
+        <div data-role="header" style="float:left"  data-position="fixed" data-tap-toggle="false" data-transition="none" >
+            <a data-role="button" data-icon="arrow-l" data-iconpos="left" class="ui-btn-left CancelarStatus" >
+                Voltar
+            </a>
+            <h3><span data-bind="text: TituloStatus"/></h3>
+        </div>
+      
+        <!-- content -->
+        <div data-role="content" data-theme="b" class="semmargem">
+      
+                    <table id="grdarea" class="fill semmargem"  cellpadding="1" cellspacing="1" border="0" data-theme="a" style="border-color:red" >
+                         <tr class="coluna semmargem"  >
+                            <td id="td_area" class="semmargem tdarea" colspan="5" style="height:14%;min-height:14%">
+                                <ul data-bind="with: app.status, updateListviewOnChange: app.status" data-role="listview" data-split-icon="gear" data-split-theme="a" data-inset="true" class="UltimoProduto semmargem" >
+                                    <li data-icon="false" ><a href="#">
+                                    <h2>&nbsp<span class="ft-me1d tdarea" data-bind="text: NomeAreaVenda() + '' "/></h2></a>
+                                    </li>
+                                </ul>        
+                            </td>
+                        </tr>
+                        <tr >
+                            <td class="coluna tdStatus"><div class="tdStatus"><a id="Status-1" data-theme="c" data-role="button" class="Status ui-corner-flat ft-med" >1</a></div></td>
+                            <td class="coluna tdStatus"><div class="tdStatus"><a id="Status-2" data-theme="c" data-role="button" class="Status ui-corner-flat ft-med" >2</a></div></td>
+                            <td class="coluna tdStatus"><div class="tdStatus"><a id="Status-3" data-theme="c" data-role="button" class="Status ui-corner-flat ft-med" >3</a></div></td>
+                       </tr>
+                        <tr >
+                            <td class="coluna tdStatus"><div class="tdStatus"><a id="Status-4" data-theme="c" data-role="button"  class="Status ui-corner-flat ft-med"   >4</a></div></td>
+                            <td class="coluna tdStatus"><div class="tdStatus"><a id="Status-5" data-theme="c" data-role="button" class="Status ui-corner-flat ft-med"  >5</a></div></td>
+                            <td class="coluna tdStatus"><div class="tdStatus"><a id="Status-6" data-theme="c" data-role="button" class="Status ui-corner-flat ft-med"  >6</a></div></td>
+                       </tr>
+                       <tr>
+                            <td class="coluna tdStatus"><div class="tdStatus"><a id="Status-7" data-theme="c" data-role="button" class="Status ui-corner-flat ft-med"  >7</a></div></td>
+                            <td class="coluna tdStatus"><div class="tdStatus"><a id="Status-8" data-theme="c" data-role="button" class="Status ui-corner-flat ft-med"  >8</a></div></td>
+                            <td class="coluna tdStatus"><div class="tdStatus"><a id="Status-9" data-theme="c" data-role="button" class="Status ui-corner-flat ft-med"  >9</a></div></td>
+                       </tr>
+                       <tr>
+                            <td class="coluna tdStatus"><div class="tdStatus"><a id="Status-10" data-theme="c" data-role="button" class="Status ui-corner-flat ft-med"  >0</a></div></td>
+                            <td class="coluna tdStatus"><div class="tdStatus"><a id="Status-11" data-theme="c" data-role="button" class="Status ui-corner-flat ft-med"  >0</a></div></td>
+                            <td class="coluna tdStatus"><div class="tdStatus"><a id="Status-12" data-theme="c" data-role="button" class="Status ui-corner-flat ft-med"  >0</a></div></td>
+                       </tr>
+                       <tr>
+                            <td class="coluna tdStatus"><div class="tdStatus"><a id="Status-13" data-theme="c" data-role="button" class="Status ui-corner-flat ft-med"  >0</a></div></td>
+                            <td class="coluna tdStatus"><div class="tdStatus"><a id="Status-14" data-theme="c" data-role="button" class="Status ui-corner-flat ft-med"  >0</a></div></td>
+                            <td class="coluna tdStatus"><div class="tdStatus"><a id="Status-15" data-theme="c" data-role="button" class="Status ui-corner-flat ft-med"  >0</a></div></td>
+                       </tr>
+                       <tr>
+                            <td class="coluna tdStatus"><div class="tdStatus"><a id="Status-16" data-theme="c" data-role="button" class="Status ui-corner-flat ft-med"  >0</a></div></td>
+                            <td class="coluna tdStatus"><div class="tdStatus"><a id="Status-17" data-theme="c" data-role="button" class="Status ui-corner-flat ft-med"  >0</a></div></td>
+                            <td class="coluna tdStatus"><div class="tdStatus"><a id="Status-18" data-theme="c" data-role="button" class="Status ui-corner-flat ft-med"  >0</a></div></td>
+                       </tr>
+                       <tr>
+                            <td class="coluna tdStatus"><div class="tdStatus"><a id="Status-19" data-theme="c" data-role="button" class="Status ui-corner-flat ft-med"  >0</a></div></td>
+                            <td class="coluna tdStatus"><div class="tdStatus"><a id="Status-20" data-theme="c" data-role="button" class="Status ui-corner-flat ft-med"  >0</a></div></td>
+                            <td class="coluna tdStatus"><div class="tdStatus"><a id="Status-21" data-theme="c" data-role="button" class="Status ui-corner-flat ft-med"  >0</a></div></td>
+                       </tr>
+
+                        <tr class="coluna semmargem"  >
+                            <td class="semmargem tdNavStatus" colspan="5"  style="height:12%;min-height:12%" >
+                                <table class="fill semmargem"  cellpadding="0" cellspacing="0" border="0" data-theme="a" style="border-color:green">
+                                    <tr><td class="semmargem" >
+                                            <a id="btnPageEsq" data-role="button" data-mini="true" data-iconpos="left" data-icon="arrow-l"   class="ui-corner-flat">Anterior</a>
+                                        </td>
+                                        <td class="semmargem" >
+                                            <a id="btnPageDir" data-role="button" data-mini="true"  data-iconpos="right" data-icon="arrow-r" class="ui-corner-flat">Próxima</a>
+                                        </td>
+                                        </tr>
+                                </table>
+                            </td>
+                         </tr>
+                     </table>
+        </div>     
+          
+        <div data-position="fixed" data-role="footer" data-tap-toggle="false" data-transition="none" class="footer-pedido1" >
+            <div data-role="navbar" data-iconpos="top">
+                <ul>
+                    <li>
+                        <a data-role="button" data-theme="e" data-icon="star" class="FooterStatus" >
+                            Livre
+                        </a>
+                    </li>
+                    <li>
+                        <a data-role="button" data-theme="i" data-icon="forbidden" class="FooterStatus" >
+                            Ocupada
+                        </a>
+                    </li>
+                    <li>
+                        <a data-role="button" data-theme="f" data-icon="shop" class="FooterStatus" >
+                            Fechamento
+                        </a>
+                    </li>
+                </ul>
+            </div>
+       </div>
+    </div>
+
+    
+    <div class="ui-loader-background"> </div>     
+    
+    <script type="text/javascript">
+        $(document).ready(function () {
+              $('.sigPad').signaturePad({ drawOnly: true, lineWidth: 0 });
+        });
+       
+        document.addEventListener('deviceready', function () {
+			navigator.splashscreen.hide();
+		}, false);
+
+     </script>
+
+    
+</body>
+</html>
